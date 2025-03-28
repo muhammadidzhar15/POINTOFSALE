@@ -1,0 +1,8 @@
+[LOGGER] 2025-03-24 08:52:19.242 PM error: controllers/user.controller.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-24 08:52:19.308 PM error: controllers/user.controller.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-24 08:55:52.768 PM error: controllers/user.controller.js:verifyAccessToken - JsonWebTokenError: invalid signature
+[LOGGER] 2025-03-24 09:04:16.890 PM error: controllers/user.controller.js:verifyAccessToken - JsonWebTokenError: invalid signature
+[LOGGER] 2025-03-24 09:19:00.759 PM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: invalid signature
+[LOGGER] 2025-03-24 09:22:16.539 PM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: invalid signature
+[LOGGER] 2025-03-24 09:22:38.516 PM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-24 09:22:38.538 PM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: jwt malformed

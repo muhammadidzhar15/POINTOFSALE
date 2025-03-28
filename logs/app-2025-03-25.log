@@ -1,0 +1,35 @@
+[LOGGER] 2025-03-25 03:19:37.606 AM error: uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:462:11)
+    at file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/routes/index.js:9:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+[LOGGER] 2025-03-25 03:19:39.058 AM error: uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:462:11)
+    at file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/routes/index.js:9:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+[LOGGER] 2025-03-25 03:19:40.598 AM error: uncaughtException: Router.use() requires a middleware function
+TypeError: Router.use() requires a middleware function
+    at Function.use (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:462:11)
+    at file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/routes/index.js:9:8
+    at ModuleJob.run (node:internal/modules/esm/module_job:218:25)
+    at async ModuleLoader.import (node:internal/modules/esm/loader:329:24)
+    at async loadESM (node:internal/process/esm_loader:28:7)
+    at async handleMainPromise (node:internal/modules/run_main:113:12)
+[LOGGER] 2025-03-25 03:22:54.690 AM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-25 03:22:54.717 AM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-25 03:24:13.289 AM error: controllers/supplier.controller.js:getAllSuplier -
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1054`. Message: `Unknown column 'address' in 'field list'`
+[LOGGER] 2025-03-25 03:50:56.598 AM error: utils/jwt.js:verifyAccessToken - JsonWebTokenError: jwt malformed
+[LOGGER] 2025-03-25 03:51:14.508 AM error: controllers/supplier.controller.js:getAllSuplier -res.statu is not a function
+[LOGGER] 2025-03-25 03:53:04.252 AM error: utils/jwt.js:verifyAccessToken - TokenExpiredError: jwt expired
+[LOGGER] 2025-03-25 04:04:23.209 AM error: utils/jwt.js:verifyAccessToken - TokenExpiredError: jwt expired

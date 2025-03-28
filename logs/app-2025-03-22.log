@@ -1,0 +1,67 @@
+[LOGGER] 2025-03-22 08:16:20.604 PM error: uncaughtException: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+Error: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+    at new module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\assert.js:21:11)
+    at internals.Base.rule (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\base.js:479:9)
+    at internals.Base.method [as message] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\extend.js:145:29)
+    at userValidation (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/validations/user.validation.js:13:8)
+    at createUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:7:28)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+[LOGGER] 2025-03-22 08:17:49.569 PM error: uncaughtException: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+Error: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+    at new module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\assert.js:21:11)
+    at internals.Base.rule (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\base.js:479:9)
+    at internals.Base.method [as message] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\extend.js:145:29)
+    at userValidation (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/validations/user.validation.js:13:8)
+    at createUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:7:28)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+[LOGGER] 2025-03-22 08:17:49.599 PM error: uncaughtException: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+Error: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+    at new module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\assert.js:21:11)
+    at internals.Base.rule (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\base.js:479:9)
+    at internals.Base.method [as message] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\extend.js:145:29)
+    at userValidation (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/validations/user.validation.js:13:8)
+    at createUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:7:28)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+[LOGGER] 2025-03-22 08:27:23.083 PM error: uncaughtException: userValidation.validate is not a function
+TypeError: userValidation.validate is not a function
+    at createUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:16:43)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+    at next (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:149:13)
+    at Route.dispatch (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\route.js:119:3)
+    at Layer.handle [as handle_request] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\layer.js:95:5)
+    at C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:284:15
+    at Function.process_params (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:346:12)
+    at next (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:280:10)
+    at Function.handle (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:175:3)
+    at router (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\express\lib\router\index.js:47:12)
+[LOGGER] 2025-03-22 10:13:45.280 PM error: uncaughtException: userUpdateValidation.validate is not a function
+TypeError: userUpdateValidation.validate is not a function
+    at updateUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:71:49)
+[LOGGER] 2025-03-22 10:14:45.342 PM error: uncaughtException: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+Error: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+    at new module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\assert.js:21:11)
+    at internals.Base.rule (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\base.js:479:9)
+    at internals.Base.method [as message] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\extend.js:145:29)
+    at userUpdateValidation (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/validations/user.validation.js:31:8)
+    at updateUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:71:28)
+[LOGGER] 2025-03-22 10:17:33.023 PM error: uncaughtException: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+Error: Cannot apply rules to empty ruleset or the last rule added does not support rule properties
+    at new module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\error.js:23:19)
+    at module.exports (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\@hapi\hoek\lib\assert.js:21:11)
+    at internals.Base.rule (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\base.js:479:9)
+    at internals.Base.method [as message] (C:\Users\idzharchocs\Desktop\skrip\backend\node_modules\joi\lib\extend.js:145:29)
+    at userUpdateValidation (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/validations/user.validation.js:31:8)
+    at updateUser (file:///C:/Users/idzharchocs/Desktop/skrip/backend/src/controllers/user.controller.js:71:28)
