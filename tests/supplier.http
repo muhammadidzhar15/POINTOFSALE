@@ -40,3 +40,13 @@ Content-Type: application/json
 
 DELETE {{BASE_URL}}/suppliers/1001
 Authorization : Bearer {{$global.accessToken}}
+
+
+##generate pdf file
+GET {{BASE_URL}}/suppliers-pdf
+Authorization : Bearer {{$global.accessToken}}
+
+##generate supplier excel
+
+GET {{BASE_URL}}/suppliers-excel
+Authorization : Bearer {{$global.accessToken}}

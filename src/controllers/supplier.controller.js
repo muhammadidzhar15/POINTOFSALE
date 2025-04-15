@@ -1,6 +1,11 @@
+import path, { format } from "path";
 import prisma from "../utils/client.js";
 import { logger } from "../utils/winston.js";
 import { supplierValidation } from "../validations/supplier.validation.js";
+import fs from "fs";
+import pdf from "pdf-creator-node";
+import { fileURLToPath } from "url";
+import excelJS from "exceljs";
 
 export const getAllSupplier = async (req, res) => {
   try {
@@ -177,6 +182,150 @@ export const deleteSupplier = async (req, res) => {
   } catch (error) {
     logger.error(
       "controllers/supplier.controller.js:deleteSupplier - " + error.message
+    );
+    return res.status(500).json({
+      message: error.message,
+      result: null,
+    });
+  }
+};
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+export const generatePdf = async (req, res) => {
+  const htmlPath = path.join(__dirname, "../templates/SupplierTemplate.html");
+  const html = fs.readFileSync(htmlPath, "utf8");
+
+  const pathFile = path.join(__dirname, "../../public/pdf");
+  const fileName = "supplier.pdf";
+  const fullPath = path.join(pathFile, fileName);
+  let options = {
+    format: "A4",
+    orientation: "portrait",
+    border: "10mm",
+    header: {
+      height: "0.1mm",
+      contents: "",
+    },
+    footer: {
+      height: "28mm",
+      contents: {
+        default:
+          '<span style="color: #444;">{{page}}</span>/<span>{{pages}}</span>',
+      },
+    },
+  };
+  try {
+    if (fs.existsSync(fullPath)) {
+      fs.unlinkSync(fullPath);
+    }
+    const data = await prisma.supplier.findMany({});
+    let suppliers = [];
+    data.forEach((supplier, no) => {
+      suppliers.push({
+        no: no + 1,
+        name:
+          supplier.firstName +
+          " " +
+          (supplier.lastName ? supplier.lastName : ""),
+        phone: supplier.phone,
+        email: supplier.email,
+        address: supplier.address,
+      });
+    });
+    let document = {
+      html: html,
+      data: {
+        suppliers: suppliers,
+      },
+      path: fullPath,
+      type: "",
+    };
+    const process = await pdf.create(document, options);
+    if (process) {
+      return res.status(200).json({
+        message: "success",
+        result: "/pdf/" + fileName,
+      });
+    }
+  } catch (error) {
+    logger.error(
+      "controllers/supplier.controller.js: generatePdf - " + error.message
+    );
+    return res.status(500).json({
+      message: error.message,
+      result: null,
+    });
+  }
+};
+
+export const generateExcel = async (req, res) => {
+  const workbook = new excelJS.Workbook();
+  const worksheet = workbook.addWorksheet("Supplier");
+
+  // Aplikasi berjalan dari folder backend, jadi path relatif dari sana
+  const excelDir = path.join(process.cwd(), "public", "excel");
+  const excelFilePath = path.join(excelDir, "Supplier.xlsx");
+
+  try {
+    // Pastikan folder ada
+    if (!fs.existsSync(excelDir)) {
+      fs.mkdirSync(excelDir, { recursive: true });
+    }
+
+    // Hapus file jika sudah ada
+    if (fs.existsSync(excelFilePath)) {
+      fs.unlinkSync(excelFilePath);
+    }
+
+    const data = await prisma.supplier.findMany({});
+
+    worksheet.columns = [
+      { header: "No", key: "s_no", width: 5 },
+      { header: "Name", key: "name", width: 25 },
+      { header: "Phone", key: "phone", width: 15 },
+      { header: "Email", key: "email", width: 35 },
+      { header: "Address", key: "address", width: 50 },
+    ];
+
+    let counter = 1;
+    data.forEach((supplier) => {
+      supplier.s_no = counter;
+      supplier.name =
+        supplier.firstName + " " + (supplier.lastName ? supplier.lastName : "");
+      worksheet.addRow(supplier);
+      counter++;
+    });
+
+    let list = ["A", "B", "C", "D", "E"];
+    for (let i = 1; i <= counter; i++) {
+      list.forEach((item) => {
+        worksheet.getCell(item + i).border = {
+          top: { style: "thin" },
+          left: { style: "thin" },
+          bottom: { style: "thin" },
+          right: { style: "thin" },
+        };
+      });
+    }
+
+    worksheet.getRow(1).eachCell((cell) => {
+      cell.font = { bold: true };
+    });
+
+    // Tambahkan logging untuk membantu debug
+    console.log("Writing Excel file to:", excelFilePath);
+
+    await workbook.xlsx.writeFile(excelFilePath);
+
+    // URL yang akan dikembalikan ke client
+    return res.status(200).json({
+      message: "success",
+      result: `/public/excel/Supplier.xlsx`, // Sesuaikan dengan URL yang benar
+    });
+  } catch (error) {
+    logger.error(
+      "controllers/supplier.controller.js:generateExcel - " + error.message
     );
     return res.status(500).json({
       message: error.message,

@@ -63,18 +63,19 @@ model Carts{
   product Product @relation(fields: [productId],references: [id])
 }
 
-model Orders{
-  id Int @id @default(autoincrement())
-  date DateTime @default(now())
-  code String @unique
-  total Decimal
-  ppm Decimal
+model Orders {
+  id         Int          @id @default(autoincrement())
+  date       DateTime     @default(now())
+  code       String       @unique
+  total      Decimal
+  ppn        Decimal      
   grandTotal Decimal
-  userId Int
-  user User @relation(fields: [userId], references: [id])
+  userId     Int
+  user       User         @relation(fields: [userId], references: [id])
   Orderdetail Orderdetail[]
   Orderreturn Orderreturn[]
 }
+
 
 model Orderdetail{
   id Int @id @default(autoincrement())
